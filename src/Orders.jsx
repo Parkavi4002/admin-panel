@@ -4,7 +4,7 @@ function Orders() {
   const [orders, setOrders] = useState([]); // MUST be array
 
   useEffect(() => {
-    fetch("http://localhost:3000/orders")
+    fetch("https://bouquet-backend-7cut.onrender.com/orders")
       .then(res => res.json())
       .then(data => {
         console.log("Orders data:", data); // check in console
@@ -14,7 +14,7 @@ function Orders() {
   }, []);
 
   const updateStatus = (id, status) => {
-    fetch(`http://localhost:3000/orders/${id}`, {
+    fetch(`https://bouquet-backend-7cut.onrender.com/orders/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status })

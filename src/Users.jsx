@@ -11,7 +11,7 @@ function Users() {
 
   // ================= FETCH USERS =================
   const fetchUsers = async () => {
-    const res = await fetch("http://localhost:3000/users");
+    const res = await fetch("https://bouquet-backend-7cut.onrender.com/users");
     const data = await res.json();
     setUsers(data);
   };
@@ -31,7 +31,7 @@ function Users() {
 
   // ================= DELETE =================
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:3000/users/${id}`, {
+    await fetch(`https://bouquet-backend-7cut.onrender.com/users/${id}`, {
       method: "DELETE",
     });
 
@@ -43,7 +43,7 @@ function Users() {
     const newStatus =
       user.status === "Active" ? "Inactive" : "Active";
 
-    await fetch(`http://localhost:3000/users/${user.id}`, {
+    await fetch(`https://bouquet-backend-7cut.onrender.com/users/${user.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: newStatus }),
@@ -58,7 +58,7 @@ function Users() {
 
   // ================= EDIT SAVE =================
   const handleUpdate = async () => {
-    await fetch(`http://localhost:3000/users/${editingUser.id}`, {
+    await fetch(`https://bouquet-backend-7cut.onrender.com/users/${editingUser.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editForm),

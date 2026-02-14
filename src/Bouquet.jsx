@@ -12,7 +12,7 @@ function Bouquet() {
 
   // Fetch Data
   const fetchBouquets = () => {
-    fetch("http://localhost:3000/bouquets")
+    fetch("https://bouquet-backend-7cut.onrender.com/bouquets")
       .then(res => res.json())
       .then(data => setBouquets(data));
   };
@@ -30,7 +30,7 @@ function Bouquet() {
 
     if (editingId) {
       // UPDATE
-      fetch(`http://localhost:3000/bouquets/${editingId}`, {
+      fetch(`https://bouquet-backend-7cut.onrender.com/bouquets/${editingId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -43,7 +43,7 @@ function Bouquet() {
       });
     } else {
       // ADD
-      fetch("http://localhost:3000/bouquets", {
+      fetch("https://bouquet-backend-7cut.onrender.com/bouquets", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -74,7 +74,7 @@ function Bouquet() {
 
   // Delete
   const deleteBouquet = (id) => {
-    fetch(`http://localhost:3000/bouquets/${id}`, {
+    fetch(`https://bouquet-backend-7cut.onrender.com/bouquets/${id}`, {
       method: "DELETE"
     }).then(() => {
       fetchBouquets();
