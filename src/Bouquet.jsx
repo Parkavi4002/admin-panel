@@ -23,8 +23,8 @@ function Bouquet() {
 
   // Add or Update Bouquet
   const handleSubmit = () => {
-    if (!form.name || !form.price || !form.image) {
-      alert("Fill all fields");
+    if (!form.name || !form.price || !form.image) {  
+      alert("Fill all fields");                   
       return;
     }
 
